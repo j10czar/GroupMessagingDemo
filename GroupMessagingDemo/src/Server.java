@@ -7,13 +7,11 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-//testing 123
 public class Server {
 
 	private static int PORT = 1789;
 	private static ArrayList<ClientConnector> clients= new ArrayList<>();
 	private static ExecutorService pool = Executors.newFixedThreadPool(5);
-	private String test;
 	
 	
 	public static void main(String[] args) throws IOException {
