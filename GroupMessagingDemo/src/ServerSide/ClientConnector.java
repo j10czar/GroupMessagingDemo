@@ -35,9 +35,14 @@ public class ClientConnector implements Runnable{
 				{
 					username = request.substring(3);  //temp
 				}
+				else if(request.equals("//j"))
+				{
+					joinLeave(true);
+				}
 				else if(request.equals("//l"))
 				{
-					serverOutToAll(username+" has left the chatroom.");
+					joinLeave(false);
+//					serverOutToAll(username+" has left the chatroom.");
 				}
 					
 				else
@@ -75,4 +80,22 @@ public class ClientConnector implements Runnable{
 			aClient.out.println("[SERVER]: "+message);
 		}
 	}
+	
+	public void joinLeave(boolean isJoin)
+	{
+		if(isJoin)
+			for(ClientConnector aClient : clients)
+			{
+				aClient.out.println(username+ "has joined the chatroom.");
+			}
+		else
+		{
+			for(ClientConnector aClient : clients)
+			{
+				aClient.out.println(username+ "has left the chatroom.");
+			}
+		}
+			
+	}
+	
 }
