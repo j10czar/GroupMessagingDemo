@@ -1,3 +1,4 @@
+package ClientSide;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +9,10 @@ import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client {
+	
+	//To do:
+	//make gui
+	//add connection failed popups
 
 	
 	private static int SERVER_PORT = 1789;
@@ -44,7 +49,7 @@ public class Client {
 		
 		BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-		
+		out.println("//j");
 		out.println("/n "+name);
 		
 		
