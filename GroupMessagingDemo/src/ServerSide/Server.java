@@ -12,6 +12,9 @@ import java.util.concurrent.Executors;
 public class Server {
 	
 	// add username to connected to screen
+	// add port change command
+	// add text input box
+	
 
 	private static int PORT = 1789;
 	private static ArrayList<ClientConnector> clients= new ArrayList<>();
