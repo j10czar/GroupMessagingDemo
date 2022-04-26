@@ -49,8 +49,8 @@ public class Client {
 		
 		BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-		out.println("//j");
 		out.println("/n "+name);
+		out.println("//j");
 		
 		
 		new Thread(serverOut).start();

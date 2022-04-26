@@ -86,13 +86,13 @@ public class ClientConnector implements Runnable{
 		if(isJoin)
 			for(ClientConnector aClient : clients)
 			{
-				aClient.out.println(username+ "has joined the chatroom.");
+				aClient.out.println(username+ " has joined the chatroom.");
 			}
 		else
 		{
 			for(ClientConnector aClient : clients)
 			{
-				aClient.out.println(username+ "has left the chatroom.");
+				aClient.out.println(username+ " has left the chatroom.");
 			}
 		}
 			
