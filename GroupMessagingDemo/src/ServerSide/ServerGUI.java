@@ -22,6 +22,7 @@ public class ServerGUI{
         frame.pack();
         frame.setVisible( true );
         frame.setSize(800,600);
+        frame.setTitle("Group Messaging Server");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
 //        addWindowListener(new WindowAdapter() {
