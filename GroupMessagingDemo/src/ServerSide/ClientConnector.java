@@ -10,7 +10,7 @@ public class ClientConnector implements Runnable{
 
 	private Socket client;
 	private BufferedReader in;
-	private PrintWriter out;
+	PrintWriter out;
 	private ArrayList<ClientConnector> clients;
 	private String username;
 	
@@ -73,13 +73,7 @@ public class ClientConnector implements Runnable{
 			aClient.out.println("("+username+"): "+message);
 		}
 	}
-	
-	public void serverOutToAll(String message) {
-		for(ClientConnector aClient : clients)
-		{
-			aClient.out.println("[SERVER]: "+message);
-		}
-	}
+
 	
 	public void joinLeave(boolean isJoin)
 	{

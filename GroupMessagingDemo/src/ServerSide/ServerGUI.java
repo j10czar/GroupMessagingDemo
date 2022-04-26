@@ -71,7 +71,7 @@ public class ServerGUI implements ActionListener{
 					}
 	
 			}
-			command = commandLine.getText();
+			else command = commandLine.getText();	
 		}
 		
 	}

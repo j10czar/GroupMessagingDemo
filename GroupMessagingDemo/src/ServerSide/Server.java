@@ -36,24 +36,31 @@ public class Server {
 			ClientConnector clientThread = new ClientConnector(client, clients);
 			clients.add(clientThread);
 			pool.execute(clientThread);
+	
 			
+			//for server interaction commands
 			if(sgui.isCommand())
 			{
-				if(sgui.getCommand().equals("command here"))
+				if(sgui.getCommand().equals("/say"))
 				{
-					
+					String message = sgui.getCommand().substring(6);
+					serverOutToAll(message);
 				}
 			}
 		}
 		
 		
-
-		
-		
 		
 
+		
 
 
+	}
+	public static void serverOutToAll(String message) {
+		for(ClientConnector aClient : clients)
+		{
+			aClient.out.println("[SERVER]: "+message);
+		}
 	}
 
 }
