@@ -1,0 +1,6 @@
+---Messaging Server Help---
+/kick (player ip) - kicks specified player
+/listusers - lists all connected users
+/say (message) - sends a message to all clients
+/log - toggles message visibility on/off
+/setport (port) - sets the port of the server

@@ -35,7 +35,15 @@ public class Server {
 			System.out.println("[SERVER]: Connected to "+client.getInetAddress().toString());
 			ClientConnector clientThread = new ClientConnector(client, clients);
 			clients.add(clientThread);
-			pool.execute(clientThread);			
+			pool.execute(clientThread);
+			
+			if(sgui.isCommand())
+			{
+				if(sgui.getCommand().equals("command here"))
+				{
+					
+				}
+			}
 		}
 		
 		
