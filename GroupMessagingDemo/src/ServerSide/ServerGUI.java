@@ -41,6 +41,8 @@ public class ServerGUI implements ActionListener{
         panel.add(commandLine);
         panel.setVisible(true);
         frame.add(panel, BorderLayout.SOUTH);
+		frame.setPreferredSize(new Dimension(800,600));
+        frame.pack();
         
         
         
