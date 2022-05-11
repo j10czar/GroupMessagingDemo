@@ -17,37 +17,38 @@ public class Client {
 	
 	private static int SERVER_PORT = 1789;
 	private static String SERVER_IP = "localhost";
-	public static void main(String[] args) throws UnknownHostException, IOException {
+	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException{
 		
 		
 		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("----Group Messaging Demo----");
-		System.out.println("By Jason Tenczar");
-		System.out.println("Are you running local? (y/n)");
-		String ans = keyboard.readLine();
-		if(ans.equals("n"))
-		{
-			System.out.println("Port: ");
-			int port = Integer.parseInt(keyboard.readLine());
-			SERVER_PORT = port;
-			System.out.println("IP address: ");
-			String ip = keyboard.readLine();
-			SERVER_IP = ip;
-		}
-		
-		
-		
-		
-		System.out.println("Username: ");
+		//login gui will replace this
+		// System.out.println("----Group Messaging Demo----");
+		// System.out.println("By Jason Tenczar");
+		// System.out.println("Are you running local? (y/n)");
+		// String ans = keyboard.readLine();
+		// if(ans.equals("n"))
+		// {
+		// 	System.out.println("Port: ");
+		// 	int port = Integer.parseInt(keyboard.readLine());
+		// 	SERVER_PORT = port;
+		// 	System.out.println("IP address: ");
+		// 	String ip = keyboard.readLine();
+		// 	SERVER_IP = ip;
+		// }
 		String name = keyboard.readLine();
+
+		name = "Admin";
 		
 		Socket socket = new Socket(SERVER_IP,SERVER_PORT);
 		ServerConnector serverOut = new ServerConnector(socket);
+
+		ClientGUI app = new ClientGUI();
 		
 		System.out.println("Type /quit to leave chatroom");
 		System.out.println("Connection established to server");
-		
-		// BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+
+
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 		out.println("/n "+name);
 		out.println("//j");
