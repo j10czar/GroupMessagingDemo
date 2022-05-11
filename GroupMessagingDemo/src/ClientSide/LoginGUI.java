@@ -25,6 +25,11 @@ public class LoginGUI implements ActionListener{
 	 * Launch the application.
 	 */
 
+	 public static void main(String[] args)
+	 {
+		 LoginGUI test = new LoginGUI();
+	 }
+
 	/**
 	 * Create the application.
 	 */
