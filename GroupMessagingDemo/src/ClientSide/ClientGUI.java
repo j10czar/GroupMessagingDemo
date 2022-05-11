@@ -18,6 +18,10 @@ public class ClientGUI implements ActionListener{
         JFrame frame = new JFrame();
         frame.add( new JLabel("Welcome to the chatroom!"), BorderLayout.NORTH );
 
+        ImageIcon icon = new ImageIcon(this.getClass().getResource("appicon.jpg"));
+
+		    frame.setIconImage(icon.getImage());
+
         JTextArea console = new JTextArea();
         TextAreaOutputStream textoutstream = new TextAreaOutputStream( console, 60 );
         PrintStream printstream = new PrintStream( textoutstream );
@@ -44,7 +48,7 @@ public class ClientGUI implements ActionListener{
         panel.add(commandLine);
         panel.setVisible(true);
         frame.add(panel, BorderLayout.SOUTH);
-		frame.setPreferredSize(new Dimension(800,600));
+		    frame.setPreferredSize(new Dimension(800,600));
         frame.pack();
         
         
@@ -73,17 +77,5 @@ public class ClientGUI implements ActionListener{
 	
 
 		
-	}
-	
-	private void printHelp() throws IOException
-	{
-		BufferedReader in = new BufferedReader(new FileReader("Resources/ServerHelp.txt"));
-		String line = in.readLine();
-		while(line != null)
-		{
-		  System.out.println(line);
-		  line = in.readLine();
-		}
-		in.close();
 	}
 }

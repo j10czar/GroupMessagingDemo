@@ -22,9 +22,12 @@ public class ServerGUI implements ActionListener{
         System.setErr( printstream );
 
 
+		ImageIcon icon = new ImageIcon(this.getClass().getResource("sappicon.png"));
+
+		frame.setIconImage(icon.getImage());
+
         frame.add( new JScrollPane( console )  );
         frame.pack();
-        frame.setVisible( true );
         frame.setSize(800,600);
         frame.setTitle("Group Messaging Server");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,7 +45,7 @@ public class ServerGUI implements ActionListener{
         panel.setVisible(true);
         frame.add(panel, BorderLayout.SOUTH);
 		frame.setPreferredSize(new Dimension(800,600));
-        frame.pack();
+        frame.setVisible( true );
         
         
         
