@@ -7,23 +7,83 @@ import ServerSide.TextAreaOutputStream;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class ClientGUI implements ActionListener{
 	
 	
 	private String command;
 	private JTextField commandLine;
+  private String myIP;
+  private int myPort;
+  private String myName;
+
+  public ClientGUI(String ip, int port, String name) throws InterruptedException, UnknownHostException, IOException  {
+        System.out.println(1);
+        myIP = ip;
+        myPort = port;
+        myName = name;
+
+        BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+
+        Socket socket = new Socket(myIP,myPort);
+	      ServerConnector serverOut = new ServerConnector(socket);
+
+
+        // ClientGUI main = new ClientGUI();
+        initalize();
+        //put gui init here
+
+        System.out.println("Type /quit to leave chatroom");
+		    System.out.println("Connection established to server");
+
+        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+		    out.println("/n "+myName);
+	    	out.println("//j");
+
+        new Thread(serverOut).start();
+
+        while(true)
+		{
+			System.out.println("> ");
+			String command = keyboard.readLine();
+			
+			if(command.equals("/getInfo"))
+			{
+				System.out.println("Connected to: "+myIP);
+				System.out.println("Port: "+ myPort);
+			}
+			else if(command.equals("/quit"))
+			{
+				out.println("//l");
+				System.exit(0);
+			}
+			else
+				out.println(command);
+
+			
+
+ 		}
+    
+
+
+  
+  }
+
+
+
+
 	
-    public ClientGUI() throws InterruptedException  {
+    public void initalize(){
         JFrame frame = new JFrame();
-        frame.add( new JLabel("Welcome to the chatroom!"), BorderLayout.NORTH );
 
         ImageIcon icon = new ImageIcon(this.getClass().getResource("appicon.jpg"));
 
 		    frame.setIconImage(icon.getImage());
 
         JTextArea console = new JTextArea();
-        TextAreaOutputStream textoutstream = new TextAreaOutputStream( console, 60 );
+        ClientTextAreaOutputStream textoutstream = new ClientTextAreaOutputStream( console, 60 );
         PrintStream printstream = new PrintStream( textoutstream );
         System.setOut( printstream );
         System.setErr( printstream );

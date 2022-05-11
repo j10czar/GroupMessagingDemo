@@ -147,7 +147,7 @@ public class LoginGUI implements ActionListener{
 			frame.setVisible(false);
 
 			try {
-				Client1 app = new Client1(myIP, myPort, myName);
+				ClientGUI app = new ClientGUI(myIP, myPort, myName);
 			} catch (UnknownHostException e1) {
 				// TODO Auto-generated catch block
 				showMessageDialog(null, "Error launching application");
