@@ -22,19 +22,25 @@ public class Client {
 		
 		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 //		login gui will replace this
-		 System.out.println("----Group Messaging Demo----");
-		 System.out.println("By Jason Tenczar");
-		 System.out.println("Are you running local? (y/n)");
-		 String ans = keyboard.readLine();
-		 if(ans.equals("n"))
-		 {
-		 	System.out.println("Port: ");
-		 	int port = Integer.parseInt(keyboard.readLine());
-		 	SERVER_PORT = port;
-		 	System.out.println("IP address: ");
-		 	String ip = keyboard.readLine();
-		 	SERVER_IP = ip;
-		 }
+		
+		 LoginGUI login = new LoginGUI();
+		 
+//		 System.out.println("----Group Messaging Demo----");
+//		 System.out.println("By Jason Tenczar");
+//		 System.out.println("Are you running local? (y/n)");
+//		 String ans = keyboard.readLine();
+//		 if(ans.equals("n"))
+//		 {
+//		 	System.out.println("Port: ");
+//		 	int port = Integer.parseInt(keyboard.readLine());
+//		 	SERVER_PORT = port;
+//		 	System.out.println("IP address: ");
+//		 	String ip = keyboard.readLine();
+//		 	SERVER_IP = ip;
+//		 }
+		 
+//		SERVER_PORT = port;
+//		SERVER_IP = ip;
 		String name = keyboard.readLine();
 
 		name = "Admin";
