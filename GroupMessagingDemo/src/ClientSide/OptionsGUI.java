@@ -14,12 +14,13 @@ public class OptionsGUI {
 
 	private JFrame frame;
 	private JTextField textField;
-
+	private ClientGUI pass;
 
 	/**
 	 * Create the application.
 	 */
-	public OptionsGUI() {
+	public OptionsGUI(ClientGUI p) {
+		pass = p;
 		initialize();
 	}
 
@@ -51,5 +52,7 @@ public class OptionsGUI {
 		textField.setBounds(102, 41, 130, 26);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
+
+		frame.setVisible(true);
 	}
 }

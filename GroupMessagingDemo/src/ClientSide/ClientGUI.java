@@ -87,8 +87,13 @@ public class ClientGUI implements ActionListener{
         commandLine.setColumns(50);
         commandLine.setText("type message here");
         commandLine.addActionListener(this);
-        
-        options = new JButton();  //add options button here
+
+        options = new JButton("Options");
+        panel.add(options,BorderLayout.EAST);
+
+
+
+          //add options button here
         
         
         
@@ -115,8 +120,8 @@ public class ClientGUI implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource().equals(commandLine))
-        {
+    if(e.getSource().equals(commandLine))
+    {
 			String command = commandLine.getText();
 			
 			if(command.equals("/getInfo"))
@@ -145,7 +150,7 @@ public class ClientGUI implements ActionListener{
 
 
 
-        }
+    }
 	
 
 		
