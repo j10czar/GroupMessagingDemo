@@ -45,30 +45,6 @@ public class ClientGUI implements ActionListener{
 
         new Thread(serverOut).start();
 
-//        while(true)
-//		{
-//			System.out.println("> ");
-//			String command = keyboard.readLine();
-//			
-//			if(command.equals("/getInfo"))
-//			{
-//				System.out.println("Connected to: "+myIP);
-//				System.out.println("Port: "+ myPort);
-//			}
-//			else if(command.equals("/quit"))
-//			{
-//				out.println("//l");
-//				System.exit(0);
-//			}
-//			else
-//				out.println(command);
-//
-//			
-//
-// 		}
-    
-
-
   
   }
 
@@ -96,6 +72,10 @@ public class ClientGUI implements ActionListener{
         frame.setSize(800,600);
         frame.setTitle("Group Messaging Application (Beta)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+       
+        
+        
         
         JPanel panel = new JPanel();
         
