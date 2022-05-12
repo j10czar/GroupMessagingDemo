@@ -36,9 +36,8 @@ public class ClientGUI implements ActionListener{
         // ClientGUI main = new ClientGUI();
         initalize();
         //put gui init here
-
-        System.out.println("Type /quit to leave chatroom");
-		    System.out.println("Connection established to server");
+        System.out.println("--- Welcome to the chatroom! ---");
+        System.out.println("Type /help for help");
 
             out = new PrintWriter(socket.getOutputStream(), true);
 		    out.println("/n "+myName);
@@ -132,14 +131,23 @@ public class ClientGUI implements ActionListener{
 
         if(e.getSource().equals(commandLine))
         {
-        	System.out.println("> ");
-			
 			String command = commandLine.getText();
 			
 			if(command.equals("/getInfo"))
 			{
 				System.out.println("Connected to: "+myIP);
 				System.out.println("Port: "+ myPort);
+			}
+			else if(commandLine.getText().equals("/help"))
+			{
+
+					try {
+						printHelp();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+	
 			}
 			else if(command.equals("/quit"))
 			{
@@ -155,5 +163,18 @@ public class ClientGUI implements ActionListener{
 	
 
 		
+	}
+	
+	
+	private void printHelp() throws IOException
+	{
+		BufferedReader in = new BufferedReader(new FileReader("Resources/ClientHelp.txt"));
+		String line = in.readLine();
+		while(line != null)
+		{
+		  System.out.println(line);
+		  line = in.readLine();
+		}
+		in.close();
 	}
 }

@@ -1,0 +1,4 @@
+---Help---
+/n (name): changes name
+/getInfo: gets server ip and port
+/quit: leaves the chatroom

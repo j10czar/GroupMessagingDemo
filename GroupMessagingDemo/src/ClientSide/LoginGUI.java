@@ -152,14 +152,17 @@ public class LoginGUI implements ActionListener{
 				// TODO Auto-generated catch block
 				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
+				System.exit(0);
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
+				System.exit(1);
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
 				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
+				System.exit(2);
 			}
 
 
