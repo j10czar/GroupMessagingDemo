@@ -20,6 +20,7 @@ public class ClientGUI implements ActionListener{
   private String myName;
   private BufferedReader keyboard;
   private PrintWriter out;
+  private JButton options;
 
   public ClientGUI(String ip, int port, String name) throws InterruptedException, UnknownHostException, IOException  {
         System.out.println(1);
@@ -73,6 +74,7 @@ public class ClientGUI implements ActionListener{
         frame.setTitle("Group Messaging Application (Beta)");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+
        
         
         
@@ -85,6 +87,10 @@ public class ClientGUI implements ActionListener{
         commandLine.setColumns(50);
         commandLine.setText("type message here");
         commandLine.addActionListener(this);
+        
+        options = new JButton();  //add options button here
+        
+        
         
         panel.add(commandLine);
         panel.setVisible(true);
