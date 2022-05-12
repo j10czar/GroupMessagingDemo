@@ -44,27 +44,27 @@ public class ClientGUI implements ActionListener{
 
         new Thread(serverOut).start();
 
-        while(true)
-		{
-			System.out.println("> ");
-			String command = keyboard.readLine();
-			
-			if(command.equals("/getInfo"))
-			{
-				System.out.println("Connected to: "+myIP);
-				System.out.println("Port: "+ myPort);
-			}
-			else if(command.equals("/quit"))
-			{
-				out.println("//l");
-				System.exit(0);
-			}
-			else
-				out.println(command);
-
-			
-
- 		}
+//        while(true)
+//		{
+//			System.out.println("> ");
+//			String command = keyboard.readLine();
+//			
+//			if(command.equals("/getInfo"))
+//			{
+//				System.out.println("Connected to: "+myIP);
+//				System.out.println("Port: "+ myPort);
+//			}
+//			else if(command.equals("/quit"))
+//			{
+//				out.println("//l");
+//				System.exit(0);
+//			}
+//			else
+//				out.println(command);
+//
+//			
+//
+// 		}
     
 
 
