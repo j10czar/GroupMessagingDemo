@@ -150,15 +150,15 @@ public class LoginGUI implements ActionListener{
 				ClientGUI app = new ClientGUI(myIP, myPort, myName);
 			} catch (UnknownHostException e1) {
 				// TODO Auto-generated catch block
-				showMessageDialog(null, "Error launching application");
+				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
-				showMessageDialog(null, "Error launching application");
+				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
 			} catch (InterruptedException e1) {
 				// TODO Auto-generated catch block
-				showMessageDialog(null, "Error launching application");
+				showMessageDialog(null, "Error connecting to server");
 				e1.printStackTrace();
 			}
 

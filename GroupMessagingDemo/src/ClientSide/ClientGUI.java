@@ -18,6 +18,8 @@ public class ClientGUI implements ActionListener{
   private String myIP;
   private int myPort;
   private String myName;
+  private BufferedReader keyboard;
+  private PrintWriter out;
 
   public ClientGUI(String ip, int port, String name) throws InterruptedException, UnknownHostException, IOException  {
         System.out.println(1);
@@ -25,7 +27,7 @@ public class ClientGUI implements ActionListener{
         myPort = port;
         myName = name;
 
-        BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+        keyboard = new BufferedReader(new InputStreamReader(System.in));
 
         Socket socket = new Socket(myIP,myPort);
 	      ServerConnector serverOut = new ServerConnector(socket);
@@ -38,7 +40,7 @@ public class ClientGUI implements ActionListener{
         System.out.println("Type /quit to leave chatroom");
 		    System.out.println("Connection established to server");
 
-        PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            out = new PrintWriter(socket.getOutputStream(), true);
 		    out.println("/n "+myName);
 	    	out.println("//j");
 
@@ -130,7 +132,23 @@ public class ClientGUI implements ActionListener{
 
         if(e.getSource().equals(commandLine))
         {
-            System.out.println("Command received");
+        	System.out.println("> ");
+			
+			String command = commandLine.getText();
+			
+			if(command.equals("/getInfo"))
+			{
+				System.out.println("Connected to: "+myIP);
+				System.out.println("Port: "+ myPort);
+			}
+			else if(command.equals("/quit"))
+			{
+				out.println("//l");
+				System.exit(0);
+			}
+			else
+				out.println(command);
+
 
 
         }
