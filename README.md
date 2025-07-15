@@ -41,4 +41,4 @@ Multiple clients can connect to the server simultaneously. For help within the a
 
 ## Notes
 
-These sources were originally created for experimentation and have since been reorganized so that resources and source files live at the repository root.
+These sources were originally created for experimentation and have since been reorganized.
